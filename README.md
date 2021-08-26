@@ -10,7 +10,7 @@ The electromagnetic field analysis program "multi_fbeam" is used for analyze inc
 ## Usage of example code  
 1. type 'make' command to compile  
    The executable d3b2_create_matrix, d3b2_bv_solver, example1.out, example2.out are created. 
-   The executable 'd3b2_create_matrix' is the solver of boundary integral equations, it outputs coefficient matrices and its inverse matrices. 
+   The executable 'd3b2_create_matrix' is the solver of boundary integral equations, it outputs coefficient matrices and inverse matrix of all coefficient matrices. 
    The executable 'd3b2_bv_solver' is the sovler for boundary value, it analyzes multiple scattering using iterative solution if defined multipe objests.
    The example1.out is the executable of source code example1.c, it shows a simplest example of usage. 
    The example2.out is the execubable of source code example2.c, it shows a example of electromagnetic field intensity analysis.
@@ -24,12 +24,12 @@ The electromagnetic field analysis program "multi_fbeam" is used for analyze inc
    It was created by Gmsh geometry file cone_m1.geo in mesh_sample folder. 
    The cone_m1_image.pdf is the visualization result of the cone_m1.msh ( using Gmsh ). 
    The ipw.txt is the sample of incident field datafile, a plane-wave is defined in it. Please refer to the "multi_fbeam" for detail.
-   The d3b2_create_matrix outputs object datafile, coefficient matrices and its inverve matrices ( binary file with the .cmat file extention ) with the specified datafile name. 
+   The d3b2_create_matrix outputs object datafile, coefficient matrices and inverse matrix ( binary file with the .cmat file extention ) with the specified datafile name. 
    
 3. type './d3b2_bv_solver' with arguments of object setting datafile name, output datafile name.  
    For example, './d3b2_bv_solver object_settings.txt ex.dat'. 
    The object_settings.txt is the sample of object setting datafile, five cone objects defined in it. 
-   The objects are set by using the outputed object file by d3b2_create_matrix and a additional translation vector. 
+   The objects are set by using the outputed object file by d3b2_create_matrix and an additional translation vector. 
    The setting of reset_flag_of_incident_field in object setting datafile can reset the incident field. 
    It can change the incident field, except the wavelength and the refractive index.  
    
