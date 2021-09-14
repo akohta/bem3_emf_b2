@@ -14,67 +14,25 @@ rotation parameter theta               [rad]:               0
 rotation parameter phi                 [rad]:               0
 
 ********** object 0 **********
-data file name                : cone_m1_md_xpi.obj
-additional translation vector : (       0,       0,       0)
+data file name                : cone_m1_md_x00.obj
+additional translation vector : (       0,       0,   -0.13)
 -- medium data --
 medium data file name                  : medium_data.txt
 medium (domain) id  1 refractive index :    0.06 +        4I
 -- mesh data --
 mesh data file name    : cone_m1.msh
-node number            :      569
-defined element number :     1162
--- rotation and translation settings --
-vector defining rotation axis :(       1,       0,       0)
-rotation angle           [rad]:  3.141593
+node number            :      893
+defined element number :     1818
 ********** object 1 **********
 data file name                : cone_m1_md_xpi.obj
-additional translation vector : (    0.35,       0,       0)
+additional translation vector : (       0,       0,    0.13)
 -- medium data --
 medium data file name                  : medium_data.txt
 medium (domain) id  1 refractive index :    0.06 +        4I
 -- mesh data --
 mesh data file name    : cone_m1.msh
-node number            :      569
-defined element number :     1162
--- rotation and translation settings --
-vector defining rotation axis :(       1,       0,       0)
-rotation angle           [rad]:  3.141593
-********** object 2 **********
-data file name                : cone_m1_md_xpi.obj
-additional translation vector : (   -0.35,       0,       0)
--- medium data --
-medium data file name                  : medium_data.txt
-medium (domain) id  1 refractive index :    0.06 +        4I
--- mesh data --
-mesh data file name    : cone_m1.msh
-node number            :      569
-defined element number :     1162
--- rotation and translation settings --
-vector defining rotation axis :(       1,       0,       0)
-rotation angle           [rad]:  3.141593
-********** object 3 **********
-data file name                : cone_m1_md_xpi.obj
-additional translation vector : (       0,    0.35,       0)
--- medium data --
-medium data file name                  : medium_data.txt
-medium (domain) id  1 refractive index :    0.06 +        4I
--- mesh data --
-mesh data file name    : cone_m1.msh
-node number            :      569
-defined element number :     1162
--- rotation and translation settings --
-vector defining rotation axis :(       1,       0,       0)
-rotation angle           [rad]:  3.141593
-********** object 4 **********
-data file name                : cone_m1_md_xpi.obj
-additional translation vector : (       0,   -0.35,       0)
--- medium data --
-medium data file name                  : medium_data.txt
-medium (domain) id  1 refractive index :    0.06 +        4I
--- mesh data --
-mesh data file name    : cone_m1.msh
-node number            :      569
-defined element number :     1162
+node number            :      893
+defined element number :     1818
 -- rotation and translation settings --
 vector defining rotation axis :(       1,       0,       0)
 rotation angle           [rad]:  3.141593
@@ -82,62 +40,33 @@ rotation angle           [rad]:  3.141593
 
 initialize boundary value
 object  0
-  solve mEMP boundary value finished. Elapsed time :     3 (sec)
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
 object  1
-  solve mEMP boundary value finished. Elapsed time :     4 (sec)
-object  2
-  solve mEMP boundary value finished. Elapsed time :     4 (sec)
-object  3
-  solve mEMP boundary value finished. Elapsed time :     3 (sec)
-object  4
-  solve mEMP boundary value finished. Elapsed time :     4 (sec)
+  solve mEMP boundary value finished. Elapsed time :     6 (sec)
 
 the first iterative operation
 object  0
-  add scattered field       finished. Elapsed time :    44 (sec)
+  add scattered field       finished. Elapsed time :    11 (sec)
 object  1
-  add scattered field       finished. Elapsed time :    45 (sec)
-object  2
-  add scattered field       finished. Elapsed time :    45 (sec)
-object  3
-  add scattered field       finished. Elapsed time :    45 (sec)
-object  4
-  add scattered field       finished. Elapsed time :    44 (sec)
+  add scattered field       finished. Elapsed time :    12 (sec)
 object  0
-  solve mEMP boundary value finished. Elapsed time :     4 (sec)
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
 object  1
-  solve mEMP boundary value finished. Elapsed time :     3 (sec)
-object  2
-  solve mEMP boundary value finished. Elapsed time :     3 (sec)
-object  3
-  solve mEMP boundary value finished. Elapsed time :     4 (sec)
-object  4
-  solve mEMP boundary value finished. Elapsed time :     3 (sec)
-Estimated time per one iteration :   240 (sec)
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+Estimated time per one iteration :    33 (sec)
 
-iterative operation start. convergence criterion cc < 1e-08
-count =  2, cc = 0.453532
-count =  3, cc = 0.807561
-count =  4, cc = 0.216402
-count =  5, cc = 0.119939
-count =  6, cc = 0.024621
-count =  7, cc = 0.0115099
-count =  8, cc = 0.00377259
-count =  9, cc = 0.00128728
-count = 10, cc = 0.000754314
-count = 11, cc = 0.000153149
-count = 12, cc = 0.000142634
-count = 13, cc = 2.36548e-05
-count = 14, cc = 2.60558e-05
-count = 15, cc = 5.33256e-06
-count = 16, cc = 4.78074e-06
-count = 17, cc = 1.39338e-06
-count = 18, cc = 8.97506e-07
-count = 19, cc = 3.61917e-07
-count = 20, cc = 1.80431e-07
-count = 21, cc = 8.95447e-08
-count = 22, cc = 3.93435e-08
-count = 23, cc = 2.1502e-08
-count = 24, cc = 9.14827e-09
-finished. Elapsed time :  5534 (sec)
-
+iterative operation start. convergence criterion cc < 1e-06
+count =  2, cc = 0.139993
+count =  3, cc = 0.0246313
+count =  4, cc = 0.00269554
+count =  5, cc = 0.000326093
+count =  6, cc = 4.11041e-05
+count =  7, cc = 5.804e-06
+count =  8, cc = 1.22438e-06
+count =  9, cc = 7.28342e-07
+count = 10, cc = 1.58738e-06
+count = 11, cc = 1.55732e-06
+count = 12, cc = 1.23456e-06
+count = 13, cc = 1.14565e-06
+count = 14, cc = 4.20329e-07
+finished. Elapsed time :   435 (sec)

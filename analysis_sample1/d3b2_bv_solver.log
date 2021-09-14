@@ -1,0 +1,72 @@
+./d3b2_bv_solver object_settings_1.txt ex1.dat 
+
+-- multi_fbeam --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:             0.2
+rotation parameter phi                 [rad]:               0
+
+********** object 0 **********
+data file name                : cone_m1_md_x00.obj
+additional translation vector : (       0,       0,   -0.13)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+********** object 1 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (       0,       0,    0.13)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+
+
+initialize boundary value
+object  0
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     6 (sec)
+
+the first iterative operation
+object  0
+  add scattered field       finished. Elapsed time :    11 (sec)
+object  1
+  add scattered field       finished. Elapsed time :    12 (sec)
+object  0
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+Estimated time per one iteration :    33 (sec)
+
+iterative operation start. convergence criterion cc < 1e-06
+count =  2, cc = 0.575586
+count =  3, cc = 0.0824883
+count =  4, cc = 0.0204491
+count =  5, cc = 0.00789128
+count =  6, cc = 0.00239964
+count =  7, cc = 0.00093216
+count =  8, cc = 0.000329891
+count =  9, cc = 0.000131569
+count = 10, cc = 4.57042e-05
+count = 11, cc = 1.87241e-05
+count = 12, cc = 6.47584e-06
+count = 13, cc = 2.62494e-06
+count = 14, cc = 9.11783e-07
+finished. Elapsed time :   431 (sec)

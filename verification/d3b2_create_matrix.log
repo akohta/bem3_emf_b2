@@ -1,4 +1,4 @@
-../d3b2_create_matrix medium_data.txt cone_m1.msh cone_m1_md.obj
+../d3b2_create_matrix medium_data.txt cone_m1_p5.msh cone_m1_p5_md_x00.obj
 
 -- multi_fbeam data --
  "ipw.txt" No.00 -- plane wave --
@@ -18,13 +18,12 @@ medium data file name                  : medium_data.txt
 medium (domain) id  1 refractive index :    0.06 +        4I
 
 -- mesh data --
-mesh data file name    : cone_m1.msh
+mesh data file name    : cone_m1_p5.msh
 node number            :      569
 defined element number :     1162
 
 
 create matrix data 
-  coefficient matrix          finished. Elapsed time :    52 (sec)
-  inverse matrix              finished. Elapsed time :   278 (sec)
-Total elapsed time : 331 (sec)
-
+  coefficient matrix          finished. Elapsed time :    36 (sec)
+  inverse matrix              finished. Elapsed time :   328 (sec)
+Total elapsed time : 364 (sec)

@@ -274,6 +274,37 @@ void mo_dat_read(char *fname,MOBJ *mo)
   fclose(fp);
 }
 
+void mo_output_node_particles(char *fname,MOBJ *mo)
+{
+  FILE *fp;
+  int s1,s2,oid,i,j;
+  char *sd,fo[128]="";
+
+  sd=strrchr(fname,'.');
+  if(sd==NULL){ // no file extension
+    sprintf(fo,"%s.particles",fname);
+  }
+  else {
+    s1=strlen(fname);
+    s2=strlen(sd);
+    strncpy(fo,fname,s1-s2);
+    sprintf(fo,"%s.particles",fo);
+  }
+  
+  if((fp=fopen(fo,"wt"))==NULL){    printf("Can not open the %s file.\n",fo);    exit(1);  }
+  fprintf(fp,"# x y z object_id\n");
+  
+  for(oid=0;oid<mo->N;oid++){
+    for(i=1;i<=mo->md[oid].bd.Ne;i++){
+      for(j=0;j<4;j++){
+        fprintf(fp,"%15.14e %15.14e %15.14e %d\n",mo->md[oid].bd.ren[i][j][0],mo->md[oid].bd.ren[i][j][1],mo->md[oid].bd.ren[i][j][2],oid);
+      }
+    }
+  }
+
+  fclose(fp);
+}
+
 ////////////////////////////////////////////////////////////////////
 void mo_malloc(MOBJ *mo)
 {
