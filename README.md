@@ -77,7 +77,7 @@ The one uses the iterative solution and the other uses the combined object (in t
 
 This code can use quadrangular ( bi-linear ) and triangular ( linear triangular ) elements. 
 I recommend using quadrangular element for reduce required memory. 
-The samples of mesh data is in the folder mesh_sample. 
+The samples of mesh data are in the folder mesh_sample. 
 The file with extension .geo is the Gmsh geometry file. 
 The file with extension .msh is the mesh datafile created by Gmsh geometry file. 
 These mesh files are created by the command 'gmsh -2 -tol 1.0e-15 xxxx.geo' in command line ( xxxx.geo is a geometry file). 
