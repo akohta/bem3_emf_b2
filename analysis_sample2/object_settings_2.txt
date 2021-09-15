@@ -1,0 +1,8 @@
+# number_of_objects reset_flag_of_incident_field(0:no reset, 1:reset)
+5 0
+# object_data_file_name shitf_x shift_y shit_z
+cone_m1_md_xpi.obj +0.00 +0.00 +0.0
+cone_m1_md_xpi.obj +0.40 +0.00 +0.0
+cone_m1_md_xpi.obj -0.40 +0.00 +0.0
+cone_m1_md_xpi.obj +0.00 +0.40 +0.0
+cone_m1_md_xpi.obj +0.00 -0.40 +0.0

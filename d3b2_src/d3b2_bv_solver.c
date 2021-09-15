@@ -10,6 +10,7 @@ int main(int argc,char **argv)
 
   mo_solve_bv(&mo);
   mo_dat_write(argv[2],&mo);
+  mo_output_node_particles(argv[2],&mo);
 
   mo_finalize(&mo);
   return 0;

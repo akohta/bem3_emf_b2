@@ -1,5 +1,5 @@
 //------------------------------------------
-n=5; // basic sampling number 
+n=6; // basic sampling number 
 
 h=0.25; // height of cone
 a=30.0/180.0*Pi; // angle of gereratrix line, cone angle (aperture) is 2*a

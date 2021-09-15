@@ -1,4 +1,4 @@
-../../d3b2_bv_solver object_settings.txt veri.dat
+../../d3b2_bv_solver object_settings.txt vc.dat
 
 -- multi_fbeam --
  "ipw.txt" No.00 -- plane wave --
@@ -27,5 +27,6 @@ defined element number :     2324
 
 
 single object
-  solve mEMP boundary value finished. Elapsed time :    12 (sec)
-  solve EH boundary value   finished. Elapsed time :    11 (sec)
+  solve mEMP boundary value finished. Elapsed time :     8 (sec)
+  solve EH boundary value   finished. Elapsed time :     4 (sec)
+

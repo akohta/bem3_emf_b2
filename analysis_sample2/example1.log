@@ -1,0 +1,130 @@
+./example1.out ex2.dat 
+
+-- multi_fbeam --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:               0
+rotation parameter phi                 [rad]:               0
+
+********** object 0 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (       0,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 1 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (     0.4,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 2 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (    -0.4,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 3 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (       0,     0.4,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 4 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (       0,    -0.4,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+
+Total electromagnetic field at r=(  0.3, 0, 1.1 )
+type=0 setting ( 4 point Gauss-Legendre )
+Ex = -2.12821259414092e-02 +4.82956110072875e-03 I 
+Ey = -5.61551839913226e-12 -6.05941566454021e-12 I 
+Ez = -3.58516057262117e-03 +5.00562623673924e-03 I 
+Hx =  4.02325568693573e-12 +1.35632453348005e-11 I 
+Hy = -3.80819627657766e-02 -7.64585960872323e-04 I 
+Hz =  9.84949068919688e-12 -3.63598430877521e-12 I 
+type=1 setting ( 9 or 7 point Gauss-Legendre )
+Ex = -2.12806328422646e-02 +4.83105615505961e-03 I 
+Ey = -5.61815357961754e-12 -6.06125457984497e-12 I 
+Ez = -3.58516632429170e-03 +5.00535846126823e-03 I 
+Hx =  4.02332610586684e-12 +1.35623969821759e-11 I 
+Hy = -3.80816963600374e-02 -7.64849087421891e-04 I 
+Hz =  9.84824157987396e-12 -3.63399544831000e-12 I 
+
+Radiation force and torque
+type=0 setting ( 4 point Gauss-Legendre ) 
+object id = 0
+F = ( 5.88857304931190e-18, 7.99751507152193e-13, 6.33503263395971e-04)
+N = (-8.38119331559141e-14, 1.62630325872826e-18,-1.42058246100447e-15), center of rotation ( 0, 0, 0)
+object id = 1
+F = (-4.70759360640950e-05, 8.36709546862390e-13, 5.74393957013336e-04)
+N = (-1.07732992652202e-12,-3.24066008247468e-04,-4.07740444326957e-13), center of rotation ( 0, 0, 0)
+object id = 2
+F = ( 4.70759360640978e-05,-1.17048081296756e-13, 5.74393957013333e-04)
+N = ( 1.14147530047782e-12, 3.24066008247471e-04,-8.29236459771836e-13), center of rotation ( 0, 0, 0)
+object id = 3
+F = ( 2.46701259681154e-14, 9.75065414993001e-05, 6.27288677567955e-04)
+N = ( 1.48050395533488e-04, 1.59795645411544e-14,-1.60790705836661e-14), center of rotation ( 0, 0, 0)
+object id = 4
+F = (-2.46644610117641e-14,-9.75065403836883e-05, 6.27288677241998e-04)
+N = (-1.48050396007547e-04,-1.59776807398797e-14,-1.60772265929399e-14), center of rotation ( 0, 0, 0)
+type=1 setting ( 9 or 7 point Gauss-Legendre ) 
+objcet id = 0
+F = ( 7.49454751730605e-18, 5.10577189793797e-13, 4.91121365731455e-04)
+N = (-7.87249361837092e-14, 1.37558150634098e-18,-1.26729956722107e-15), center of rotation ( 0, 0, 0)
+objcet id = 1
+F = (-3.01350287533860e-05, 9.52455609770208e-13, 5.23544846161126e-04)
+N = (-1.02559406889931e-12,-2.98253955581303e-04,-3.27295258766274e-13), center of rotation ( 0, 0, 0)
+objcet id = 2
+F = ( 3.01350287533902e-05, 1.11060622233049e-14, 5.23544846161125e-04)
+N = ( 1.10262940178159e-12, 2.98253955581306e-04,-8.14857418194627e-13), center of rotation ( 0, 0, 0)
+objcet id = 3
+F = ( 2.46226243604333e-14, 6.72138612241385e-05, 5.14262488498900e-04)
+N = ( 1.02701670274744e-04, 1.60345149565746e-14,-1.59668895401317e-14), center of rotation ( 0, 0, 0)
+objcet id = 4
+F = (-2.46167425636476e-14,-6.72138603296457e-05, 5.14262487998897e-04)
+N = (-1.02701670721891e-04,-1.60331622449579e-14,-1.59649007067716e-14), center of rotation ( 0, 0, 0)

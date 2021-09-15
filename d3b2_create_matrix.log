@@ -1,3 +1,35 @@
+./d3b2_create_matrix medium_data.txt cone_m1.msh cone_m1_md_x00.obj
+
+-- multi_fbeam data --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:               0
+rotation parameter phi                 [rad]:               0
+
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+
+
+create matrix data 
+  coefficient matrix          finished. Elapsed time :    66 (sec)
+  inverse matrix              finished. Elapsed time :  1251 (sec)
+Total elapsed time : 1318 (sec)
+
+
+
 ./d3b2_create_matrix medium_data.txt cone_m1.msh cone_m1_md_xpi.obj 1 0 0 3.14159265 0 0 0
 
 -- multi_fbeam data --
@@ -10,7 +42,7 @@ y-component of polarization coefficient     :      0+      0i
 x-component of translation vector           :               0
 y-component of translation vector           :               0
 z-component of translation vector           :               0
-rotation parameter theta               [rad]:             0.3
+rotation parameter theta               [rad]:               0
 rotation parameter phi                 [rad]:               0
 
 -- medium data --
@@ -19,8 +51,8 @@ medium (domain) id  1 refractive index :    0.06 +        4I
 
 -- mesh data --
 mesh data file name    : cone_m1.msh
-node number            :      569
-defined element number :     1162
+node number            :      893
+defined element number :     1818
 
 -- rotation and translation settings --
 vector defining rotation axis :(       1,       0,       0)
@@ -28,7 +60,6 @@ rotation angle           [rad]: 3.141593
 
 
 create matrix data 
-  coefficient matrix          finished. Elapsed time :    55 (sec)
-  inverse matrix              finished. Elapsed time :   275 (sec)
-Total elapsed time : 331 (sec)
-
+  coefficient matrix          finished. Elapsed time :    71 (sec)
+  inverse matrix              finished. Elapsed time :  1108 (sec)
+Total elapsed time : 1181 (sec)

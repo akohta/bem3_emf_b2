@@ -1,0 +1,131 @@
+./d3b2_bv_solver object_settings_2.txt ex2.dat
+
+-- multi_fbeam --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:               0
+rotation parameter phi                 [rad]:               0
+
+********** object 0 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (       0,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 1 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (     0.4,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 2 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (    -0.4,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 3 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (       0,     0.4,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+********** object 4 **********
+data file name                : cone_m1_md_xpi.obj
+additional translation vector : (       0,    -0.4,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1.msh
+node number            :      893
+defined element number :     1818
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+
+
+initialize boundary value
+object  0
+  solve mEMP boundary value finished. Elapsed time :    36 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     7 (sec)
+object  2
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+object  3
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+object  4
+  solve mEMP boundary value finished. Elapsed time :     6 (sec)
+
+the first iterative operation
+object  0
+  add scattered field       finished. Elapsed time :    74 (sec)
+object  1
+  add scattered field       finished. Elapsed time :    67 (sec)
+object  2
+  add scattered field       finished. Elapsed time :    72 (sec)
+object  3
+  add scattered field       finished. Elapsed time :    72 (sec)
+object  4
+  add scattered field       finished. Elapsed time :    72 (sec)
+object  0
+  solve mEMP boundary value finished. Elapsed time :     6 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+object  2
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+object  3
+  solve mEMP boundary value finished. Elapsed time :     6 (sec)
+object  4
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+Estimated time per one iteration :   384 (sec)
+
+iterative operation start. convergence criterion cc < 1e-06
+count =  2, cc = 0.208433
+count =  3, cc = 0.40538
+count =  4, cc = 0.0359349
+count =  5, cc = 0.0150868
+count =  6, cc = 0.00313035
+count =  7, cc = 0.000930882
+count =  8, cc = 0.000245631
+count =  9, cc = 6.70627e-05
+count = 10, cc = 3.11632e-05
+count = 11, cc = 8.67246e-06
+count = 12, cc = 3.0764e-06
+count = 13, cc = 7.94989e-07
+finished. Elapsed time :  3487 (sec)

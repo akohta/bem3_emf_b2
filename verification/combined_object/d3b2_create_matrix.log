@@ -25,6 +25,6 @@ defined element number :     2324
 
 
 create matrix data 
-  coefficient matrix          finished. Elapsed time :   132 (sec)
-  inverse matrix              finished. Elapsed time :  2171 (sec)
-Total elapsed time : 2303 (sec)
+  coefficient matrix          finished. Elapsed time :   113 (sec)
+  inverse matrix              finished. Elapsed time :  2533 (sec)
+Total elapsed time : 2647 (sec)

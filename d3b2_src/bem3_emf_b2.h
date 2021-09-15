@@ -15,7 +15,7 @@
 #define ITER_MIN  10 // minimum number of iterative operations
 #define ITER_MAX 100 // maximum number of iterative operations
 #define PREC_DEF   2 // type setting for coefficient matrix and fields for force analysis, 0:4p-GL, 1:9p-GL, 2:GLNp-GL,3:GHNp-GL
-#define CCD   1.0e-8 // for convergence criterion 
+#define CCD   1.0e-6 // for convergence criterion 
 
 typedef struct multi_object_data{
   int N;         // number of objects 
@@ -40,12 +40,13 @@ void create_matrix(DOMD *md,char *ofn);         // create coefficient matrix dat
 
 // ----------- for d3b2_bv_solver -------------------------------------
 // mo_setup.c
-void mo_initialize(int argc,char **argv,MOBJ *mo); // read datafile and initalize multi object 
-void mo_print_data(MOBJ *mo);                      // print readed data
-void mo_print_data_mksa(MOBJ *mo);                 // print readed data in MKSA system of units
-void mo_finalize(MOBJ *mo);                        // free allocated memory 
-void mo_dat_write(char *fname,MOBJ *mo);           // output analysis result to binary file with specified filename
-void mo_dat_read(char *fname,MOBJ *mo);            // read datafile outputed by mo_dat_write()
+void mo_initialize(int argc,char **argv,MOBJ *mo);   // read datafile and initalize multi object 
+void mo_print_data(MOBJ *mo);                        // print readed data
+void mo_print_data_mksa(MOBJ *mo);                   // print readed data in MKSA system of units
+void mo_finalize(MOBJ *mo);                          // free allocated memory 
+void mo_dat_write(char *fname,MOBJ *mo);             // output analysis result to binary file with specified filename
+void mo_dat_read(char *fname,MOBJ *mo);              // read datafile outputed by mo_dat_write()
+void mo_output_node_particles(char *fname,MOBJ *mo); // outputs the nodes as point cloud data ( .particles file ) 
 // mo_solve.c
 void mo_solve_bv(MOBJ *mo);                        // solve boundary integral equation by using iterative solution
 
