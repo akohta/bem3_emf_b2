@@ -1,6 +1,7 @@
 # makefile for Intel C compiler
 CC     =icc
 CFLAGS =-fast -Wall
+LDFLAGS=-lpng -lz
 MPFLAGS=-qopenmp
 MP_LD  =-liomp5
 # link mkl lapack library, static linking 
@@ -19,6 +20,8 @@ TARGET3=example1.out
 TRGSRC3=example1.c
 TARGET4=example2.out
 TRGSRC4=example2.c
+TARGET5 =example3.out
+TRGSRC5 =example3.c
 
 SRCS1=$(wildcard $(SRCDIR1)/*.c)
 OBJS1=$(addprefix $(OBJDIR)/,$(patsubst %.c,%.o,$(notdir $(SRCS1)) ))
@@ -36,9 +39,9 @@ TRGOBJ1=$(filter-out $(OBJDIR)/$(TARGET2).o, $(OBJS1)) $(OBJS2) $(OBJS3)
 TRGOBJ2=$(filter-out $(OBJDIR)/$(TARGET1).o, $(OBJS1)) $(OBJS2) $(OBJS3) 
 TRGOBJ3=$(filter-out $(OBJDIR)/$(TARGET1).o $(OBJDIR)/$(TARGET2).o, $(OBJS1)) $(OBJS2) $(OBJS3) $(patsubst %.c,%.o,$(TRGSRC3))
 TRGOBJ4=$(filter-out $(OBJDIR)/$(TARGET1).o $(OBJDIR)/$(TARGET2).o, $(OBJS1)) $(OBJS2) $(OBJS3) $(patsubst %.c,%.o,$(TRGSRC4))
+TRGOBJ5=$(filter-out $(OBJDIR)/$(TARGET1).o $(OBJDIR)/$(TARGET2).o, $(OBJS1)) $(OBJS2) $(OBJS3) $(patsubst %.c,%.o,$(TRGSRC5))
 
-
-all : directories $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4)
+all : directories $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) 
 
 directories:
 	@mkdir -p $(OBJDIR)
@@ -55,6 +58,9 @@ $(TARGET3) : $(TRGOBJ3)
 $(TARGET4) : $(TRGOBJ4)  
 	$(CC) -o $@ $^ $(LDF_MKL) $(MP_LD)
 
+$(TARGET5) : $(TRGOBJ5)  
+	$(CC) $(LDFLAGS) -o $@ $^ $(LDF_MKL) $(MP_LD)
+
 $(OBJDIR)/%.o : $(SRCDIR1)/%.c
 	$(CC) $(CFLAGS) $(COP_MKL) $(MPFLAGS) -I$(SRCDIR2) -I$(SRCDIR3) -c $< -o $@
 
@@ -68,7 +74,7 @@ $(OBJDIR)/%.o : $(SRCDIR3)/%.c
 	$(CC) $(CFLAGS) $(COP_MKL) $(MPFLAGS) -I$(SRCDIR1) -I$(SRCDIR2) -I$(SRCDIR3) -c $<
 
 clean:
-	@rm -rf $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(OBJDIR) ./*.o
+	@rm -rf $(TARGET1) $(TARGET2) $(TARGET3) $(TARGET4) $(TARGET5) $(OBJDIR) ./*.o
 
 $(OBJS1) : $(HEAD1) $(HEAD2) $(HEAD3) 
 $(OBJS2) : $(HEAD2) $(HEAD3) 
