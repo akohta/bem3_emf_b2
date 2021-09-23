@@ -49,7 +49,7 @@ The electromagnetic field analysis program "multi_fbeam" is used for analyze inc
    The I_example2_logcb.png is the visualization result of intensity distributions, created by Gnuplot script gscript_example2_logcb.plt 
    (using ImageMagick to convert eps to png).  
    
-6. type './example3.out' with an argument of datafile name outputed by d3b1_bv_solver.  
+6. type './example3.out' with an argument of datafile name output by d3b1_bv_solver.  
    For example, './example3.out ex.dat'. 
    This executable calculates instantaneous value of the electromagnetic fields, outputs them to png image files. 
    The image files are output to the folder which has a name adding "images" to the datafile name specified in the argument (file-extension is excluded). 
