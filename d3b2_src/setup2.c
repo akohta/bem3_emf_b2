@@ -159,15 +159,35 @@ void read_medium_data(char *med_fn,DOMD *md)
 
   if((fp=fopen(med_fn,"rt"))==NULL){    printf("Can not open the '%s' file. Exit...\n",med_fn);    exit(1);  }
   strcpy(md->med_fn,med_fn);
-  fgets(buf,256,fp);
-  fgets(buf,256,fp);
-  fscanf(fp,"%d\n",&ti);  md->MN=ti;
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup2.c, read_medium_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup2.c, read_medium_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
+  if(fscanf(fp,"%d\n",&ti)!=1){
+    printf("setup2.c, read_medium_data(), failed to read the MN. exit...\n");
+    exit(1);
+  }
+  md->MN=ti;
   md-> n=(double complex *)m_alloc2(md->MN+1,sizeof(double complex),"setup2.c, read_medium_data(),md->n");
   md->kn=(double complex *)m_alloc2(md->MN+1,sizeof(double complex),"setup2.c, read_medium_data(),md->kn");
-  fgets(buf,256,fp);
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup2.c, read_medium_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
   for(i=1;i<=md->MN;i++){
-    fscanf(fp,"%lf",&td);
-    fscanf(fp,"%lf",&td2); md->n[i]=td+td2*I;
+    if(fscanf(fp,"%lf",&td)!=1){
+      printf("setup2.c, read_medium_data(), failed to read the real(n). exit...\n");
+      exit(1);
+    }
+    if(fscanf(fp,"%lf",&td2)!=1){
+      printf("setup2.c, read_medium_data(), failed to read the imag(n). exit...\n");
+      exit(1);
+    }
+    md->n[i]=td+td2*I;
   }
   fclose(fp);
 }
@@ -194,66 +214,124 @@ void read_mesh_data(char *msh_fn,DOMD *md)
 
   if((fp=fopen(msh_fn,"rt"))==NULL){    printf("Can not open the '%s' file. Exit...\n",msh_fn);    exit(1);  }
   strcpy(md->msh_fn,msh_fn);
-  fgets(buf,256,fp);
-  fscanf(fp,"%lf",&td);
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup.c, read_mesh_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
+  if(fscanf(fp,"%lf",&td)!=1){
+    printf("setup.c, read_mesh_data(), failed to read the msh version. exit...\n");
+    exit(1);
+  }
   // check file version
   if(td<MSHVER){
     printf("This program supports mesh file version %g later. Reading file version is %g. Exit...\n",MSHVER,td);
     fclose(fp);
     exit(1);
   }
-  fscanf(fp,"%d",&ti);
+  if(fscanf(fp,"%d",&ti)!=1){
+    printf("setup.c, read_mesh_data(), failed to read the msh formant. exit...\n");
+    exit(1);
+  }
   //check data format
   if(ti!=MSHASCI){
     printf("This program supports 'ASCII' data format mesh file. Exit...\n");
     fclose(fp);
     exit(1);
   }
-  fscanf(fp,"%d\n",&ti);
+  if(fscanf(fp,"%d\n",&ti)!=1){
+    printf("setup.c, read_mesh_data(), failed to read the data precision. exit...\n");
+    exit(1);
+  }
   //check data precision
   if(ti!=MSHPREC){
     printf("This program supports double precision mesh data. Exit...\n");
     fclose(fp);
     exit(1);
   }
-  fgets(buf,256,fp);
-  fgets(buf,256,fp);
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup.c, read_mesh_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup.c, read_mesh_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
 
-  fscanf(fp,"%d\n",&ti); 
+  if(fscanf(fp,"%d\n",&ti)!=1){
+    printf("setup.c, read_mesh_data(), failed to read the Nn. exit...\n");
+    exit(1);
+  } 
   md->bd.Nn=ti;
   malloc_node(&(md->bd));
   for(i=1;i<=md->bd.Nn;i++){
-    fscanf(fp,"%d",&ti);    if(ti!=i)       printf("bad id %d\n",ti);
-    fscanf(fp,"%lf",&td);    md->bd.rn[i][0]=td;
-    fscanf(fp,"%lf",&td);    md->bd.rn[i][1]=td;
-    fscanf(fp,"%lf\n",&td); md->bd.rn[i][2]=td;
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the id. exit...\n");
+      exit(1);
+    }
+    if(ti!=i)       printf("bad id %d\n",ti);
+    if(fscanf(fp,"%lf",&td)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the rn[i][0]. exit...\n");
+      exit(1);
+    }
+    md->bd.rn[i][0]=td;
+    if(fscanf(fp,"%lf",&td)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the rn[i][1]. exit...\n");
+      exit(1);
+    }
+    md->bd.rn[i][1]=td;
+    if(fscanf(fp,"%lf\n",&td)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the rn[i][2]. exit...\n");
+      exit(1);
+    }
+    md->bd.rn[i][2]=td;
   }
-  fgets(buf,256,fp);
-  fgets(buf,256,fp);
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup.c, read_mesh_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
+  if(fgets(buf,256,fp)==NULL){
+    printf("setup.c, read_mesh_data(), failed to read the line. exit...\n");
+    exit(1);
+  }
 
-  fscanf(fp,"%d",&ti);
+  if(fscanf(fp,"%d",&ti)!=1){
+    printf("setup.c, read_mesh_data(), failed to read the Ne. exit...\n");
+    exit(1);
+  }
   md->bd.Ne=ti/2; 
   malloc_elem(&(md->bd));
 
   nc=0;
   for(i=1;i<=md->bd.Ne;i++){
     // element id
-    fscanf(fp,"%d",&ti);
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the id. exit...\n");
+      exit(1);
+    }
     if(ti!=i*2-1){
       printf("bad id :%d. Exit...\n",ti);
       exit(1);
     }
     // element type
-    fscanf(fp,"%d",&ti);
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the type. exit...\n");
+      exit(1);
+    }
     etype=ti;
     if(ti!=ELT3 && ti!=ELT4){
       printf("bad element type. element type must be %d or %d. Exit...\n",ELT3,ELT4);
       exit(1);
     }
     // number of tags
-    fscanf(fp,"%d",&ti);
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the number of tags. exit...\n");
+      exit(1);
+    }
     for(j=0;j<ti;j++){
-      fscanf(fp,"%d",&ti2);
+      if(fscanf(fp,"%d",&ti2)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the physical entity. exit...\n");
+        exit(1);
+      }
       if(j==0){ // domain id ( gmsh physical entity)
         if(ti2==OPENDID) ti2=0;
         if(md->MN>=ti2) md->bd.md[i]=ti2;
@@ -267,12 +345,28 @@ void read_mesh_data(char *msh_fn,DOMD *md)
       }
     }
     // node id
-    fscanf(fp,"%d",&ti);  md->bd.ed[i][0]=ti;
-    fscanf(fp,"%d",&ti);  md->bd.ed[i][1]=ti;
-    fscanf(fp,"%d",&ti);  md->bd.ed[i][2]=ti;
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the ed[i][0]. exit...\n");
+      exit(1);
+    }
+    md->bd.ed[i][0]=ti;
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the ed[i][1]. exit...\n");
+      exit(1);
+    }
+    md->bd.ed[i][1]=ti;
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the ed[i][2]. exit...\n");
+      exit(1);
+    }
+    md->bd.ed[i][2]=ti;
     if(etype==ELT3) md->bd.ed[i][3]=0;
     else {
-      fscanf(fp,"%d",&ti);  md->bd.ed[i][3]=ti;
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][3]. exit...\n");
+        exit(1);
+      }
+      md->bd.ed[i][3]=ti;
     }
     // element node id
     if(etype==ELT3){
@@ -289,22 +383,34 @@ void read_mesh_data(char *msh_fn,DOMD *md)
     }
 
     // element id
-    fscanf(fp,"%d",&ti);
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the element id. exit...\n");
+      exit(1);
+    }
     if(ti!=i*2){
       printf("bad id :%d. Exit...\n",ti);
       exit(1);
     }
     // element type
-    fscanf(fp,"%d",&ti);
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the element type. exit...\n");
+      exit(1);
+    }
     etype=ti;
     if(ti!=ELT3 && ti!=ELT4){
       printf("bad element type. element type must be %d or %d. Exit...\n",ELT3,ELT4);
       exit(1);
     }
     // number of tags
-    fscanf(fp,"%d",&ti);
+    if(fscanf(fp,"%d",&ti)!=1){
+      printf("setup.c, read_mesh_data(), failed to read the number of tags. exit...\n");
+      exit(1);
+    }
     for(j=0;j<ti;j++){
-      fscanf(fp,"%d",&ti2);
+      if(fscanf(fp,"%d",&ti2)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the domain id. exit...\n");
+        exit(1);
+      }
       if(j==0){ // domain id
         if(ti2==OPENDID) ti2=0;
         if(md->MN>=ti2) md->bd.sd[i]=ti2;
@@ -316,39 +422,60 @@ void read_mesh_data(char *msh_fn,DOMD *md)
     }
     // check node id
     if(etype==ELT3){
-      fscanf(fp,"%d",&ti);
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][0]. exit...\n");
+        exit(1);
+      }
       if(md->bd.ed[i][0]!=ti){
         printf("node id miss matched. check element id %d. Exit...\n",i*2);
         exit(1);
       }
-      fscanf(fp,"%d",&ti);
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][1]. exit...\n");
+        exit(1);
+      }
       if(md->bd.ed[i][2]!=ti){
         printf("node id miss matched. check element id %d. Exit...\n",i*2);
         exit(1);
       }
-      fscanf(fp,"%d",&ti);
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][2]. exit...\n");
+        exit(1);
+      }
       if(md->bd.ed[i][1]!=ti){
         printf("node id miss matched. check element id %d. Exit...\n",i*2);
         exit(1);
       }
     }
     else {
-      fscanf(fp,"%d",&ti);
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][0]. exit...\n");
+        exit(1);
+      }
       if(md->bd.ed[i][0]!=ti){
         printf("node id miss matched. check element id %d. Exit...\n",i*2);
         exit(1);
       }
-      fscanf(fp,"%d",&ti);
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][1]. exit...\n");
+        exit(1);
+      }
       if(md->bd.ed[i][3]!=ti){
         printf("node id miss matched. check element id %d. Exit...\n",i*2);
         exit(1);
       }
-      fscanf(fp,"%d",&ti);
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][2]. exit...\n");
+        exit(1);
+      }
       if(md->bd.ed[i][2]!=ti){
         printf("node id miss matched. check element id %d. Exit...\n",i*2);
         exit(1);
       }
-      fscanf(fp,"%d",&ti);
+      if(fscanf(fp,"%d",&ti)!=1){
+        printf("setup.c, read_mesh_data(), failed to read the ed[i][3]. exit...\n");
+        exit(1);
+      }
       if(md->bd.ed[i][1]!=ti){
         printf("node id miss matched. check element id %d. Exit...\n",i*2);
         exit(1);

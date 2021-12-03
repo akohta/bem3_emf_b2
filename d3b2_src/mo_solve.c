@@ -97,7 +97,7 @@ void solve_coefficient(int flg,DOMD *md)
   time_t ms,me;
   double complex *B;
 
-  if(flg==1) printf("  solve mEMP boundary value "); fflush(stdout);
+  if(flg==1){ printf("  solve mEMP boundary value "); fflush(stdout); }
   time(&ms);
   B=(double complex *)m_alloc2(md->cm.na,sizeof(double complex),"mo_solve.c, solve_coefficient(),B");
   create_Bmatrix(B,md);
@@ -108,7 +108,7 @@ void solve_coefficient(int flg,DOMD *md)
   time(&me);
   if(flg==1) printf("finished. Elapsed time : %5g (sec)\n",difftime(me,ms));
 
-  if(flg==1) printf("  solve EH boundary value   "); fflush(stdout);
+  if(flg==1){ printf("  solve EH boundary value   "); fflush(stdout); }
   time(&ms);
   solve_eh_bv(&(md->cm),md);
   solve_deh_bv(&(md->cm),md);
@@ -123,7 +123,7 @@ void solve_coefficient_EH(int flg,DOMD *md)
 
   time_t ms,me;
 
-  if(flg==1) printf("  solve EH boundary value   "); fflush(stdout);
+  if(flg==1){ printf("  solve EH boundary value   "); fflush(stdout); }
   time(&ms);
   solve_eh_bv(&(md->cm),md);
   solve_deh_bv(&(md->cm),md);
@@ -164,8 +164,14 @@ void create_Bmatrix_dac(size_t *j,size_t did,size_t cid,double complex *B,DOMD *
     td=md->bd.sb[did].sid[t];
 
     for(tn=0;tn<4;tn++){
-      fread(tG,sizeof(double complex),Ne*4,fg);
-      fread(tH,sizeof(double complex),Ne*4,fh);
+      if(fread(tG,sizeof(double complex),Ne*4,fg)!=Ne*4){
+        printf("mo_solve.c, create_Bmatrix_dac(), failed to read the tG. exit...\n");
+        exit(1);
+      }
+      if(fread(tH,sizeof(double complex),Ne*4,fh)!=Ne*4){
+        printf("mo_solve.c, create_Bmatrix_dac(), failed to read the tH. exit...\n");
+        exit(1);
+      }
       if( tn==3 && ELT3==check_element_type(td,&(md->bd)) )  continue;
 
       B[*j]=0.0;
@@ -248,7 +254,10 @@ void solve_ABmatrix(double complex *Bc,DOMD *md)
   if((fa=fopen(md->cm.lupfn,"rb"))==NULL){     printf("mo_solve.c, solve_ABmatrix(), Failed to open the %s file.\n",md->cm.lupfn);    exit(1); }
 
   for(i=0;i<N;i++){
-    fread(tA,sizeof(double complex),N,fa);
+    if(fread(tA,sizeof(double complex),N,fa)!=N){
+      printf("mo_solve.c, solve_ABmatrix(), failed to read the tA. exit...\n");
+      exit(1);
+    }
     X[i]=0.0;
     for(j=0;j<N;j++) X[i]+=tA[j]*Bc[j];
   }
@@ -268,7 +277,7 @@ void solve_coefficient_mEMP(int flg,DOMD *md)
   time_t ms,me;
   double complex *B;
 
-  if(flg==1) printf("  solve mEMP boundary value "); fflush(stdout);
+  if(flg==1){ printf("  solve mEMP boundary value "); fflush(stdout); }
   time(&ms);
   B=(double complex *)m_alloc2(md->cm.na,sizeof(double complex),"mo_solve.c, solve_coefficient_mEMP(),B");
   create_Bmatrix(B,md);
@@ -561,9 +570,18 @@ void solve_eh_bv(CMD *cm,DOMD *md)
       atd=abs(at);
 
       for(tn=0;tn<4;tn++){
-        fread(tdG,sizeof(double complex),2*Ne*4,fdg);
-        fread(tdH,sizeof(double complex),2*Ne*4,fdh);
-        fread(tdF,sizeof(double),3,fdf);
+        if(fread(tdG,sizeof(double complex),2*Ne*4,fdg)!=2*Ne*4){
+          printf("mo_solve.c, solve_eh_bv(), failed to read the tdG. exit...\n");
+          exit(1);
+        }
+        if(fread(tdH,sizeof(double complex),2*Ne*4,fdh)!=2*Ne*4){
+          printf("mo_solve.c, solve_eh_bv(), failed to read the tdH. exit...\n");
+          exit(1);
+        }
+        if(fread(tdF,sizeof(double),3,fdf)!=3){
+          printf("mo_solve.c, solve_eh_bv(), failed to read the tdF. exit...\n");
+          exit(1);
+        }
         if( tn==3 && ELT3==check_element_type(atd,&(md->bd)) )  continue;
 
         // tangential vector
@@ -677,8 +695,14 @@ void solve_deh_bv(CMD *cm,DOMD *md)
       atd=abs(md->bd.sb[d].sid[t]);
 
       for(tn=0;tn<4;tn++){
-        fread(tG,sizeof(double complex),Ne*4,fg);
-        fread(tH,sizeof(double complex),Ne*4,fh);
+        if(fread(tG,sizeof(double complex),Ne*4,fg)!=Ne*4){
+          printf("mo_solve.c, solve_deh_bv(), failed to read the tG. exit...\n");
+          exit(1);
+        }
+        if(fread(tH,sizeof(double complex),Ne*4,fh)!=Ne*4){
+          printf("mo_solve.c, solve_deh_bv(), failed to read the tH. exit...\n");
+          exit(1);
+        }
         if( tn==3 && ELT3==check_element_type(atd,&(md->bd)) )  continue;
 
         for(i=0;i<6;i++){
