@@ -1,0 +1,6 @@
+# number_of_objects reset_flag_of_incident_field(0:no reset, 1:reset)
+3 0
+# object_data_file_name shitf_x shift_y shit_z
+sphere_m0_md.obj +0.00 +0.00 +0.00
+sphere_m0_md.obj +0.50 +0.00 +0.00
+sphere_m0_md.obj -0.50 +0.00 +0.00

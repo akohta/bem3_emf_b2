@@ -1,0 +1,30 @@
+../../d3b2_create_matrix medium_data.txt 2cone.msh 2cone_md.obj
+
+-- multi_fbeam data --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:             0.3
+rotation parameter phi                 [rad]:               0
+
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+medium (domain) id  2 refractive index :    0.06 +        4I
+
+-- mesh data --
+mesh data file name    : 2cone.msh
+node number            :     1138
+defined element number :     2324
+
+
+create matrix data 
+  coefficient matrix          finished. Elapsed time :   113 (sec)
+  inverse matrix              finished. Elapsed time :  2533 (sec)
+Total elapsed time : 2647 (sec)

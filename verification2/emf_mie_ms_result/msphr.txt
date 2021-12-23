@@ -1,0 +1,8 @@
+## sphere datafile 
+# number of spheres
+3
+# a real(ns) imag(ns) xs ys zs bsn bdv l_limit
+0.2 0.06 4.0 +0.00 0.0 0.0 32 4 40
+0.2 0.06 4.0 +0.50 0.0 0.0 32 4 40
+0.2 0.06 4.0 -0.50 0.0 0.0 32 4 40
+

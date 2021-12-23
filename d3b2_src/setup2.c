@@ -223,8 +223,8 @@ void read_mesh_data(char *msh_fn,DOMD *md)
     exit(1);
   }
   // check file version
-  if(td<MSHVER){
-    printf("This program supports mesh file version %g later. Reading file version is %g. Exit...\n",MSHVER,td);
+  if(td!=MSHVER){
+    printf("This program supports mesh file version %g. Reading file version is %g. Exit...\n",MSHVER,td);
     fclose(fp);
     exit(1);
   }

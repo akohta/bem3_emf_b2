@@ -1,0 +1,29 @@
+../d3b2_create_matrix medium_data.txt sphere_m0.msh sphere_m0_md.obj
+
+-- multi_fbeam data --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:               0
+rotation parameter phi                 [rad]:               0
+
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+
+-- mesh data --
+mesh data file name    : sphere_m0.msh
+node number            :      602
+defined element number :     1200
+
+
+create matrix data 
+  coefficient matrix          finished. Elapsed time :    44 (sec)
+  inverse matrix              finished. Elapsed time :   395 (sec)
+Total elapsed time : 440 (sec)
