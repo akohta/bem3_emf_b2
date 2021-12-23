@@ -68,3 +68,15 @@ N = ( 7.28475545572129e-15,-5.33630756770209e-20, 6.70618854230805e-16), center 
 objcet id = 1
 F = ( 1.72794721239877e-18, 2.51638655388280e-13, 3.07610136527939e-04)
 N = ( 4.06703759008747e-14, 5.43795152137261e-19, 1.16494198829249e-15), center of rotation ( 0, 0, 0)
+
+Absorbed energy
+type=0 setting ( 4 point Gauss-Legendre ) 
+object id = 0
+P = 1.28131094944428e-05
+object id = 1
+P = 1.31898641961759e-05
+type=1 setting ( 9 or 7 point Gauss-Legendre ) 
+object id = 0
+P = 1.24272476272035e-05
+object id = 1
+P = 1.23430198911116e-05
