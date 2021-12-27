@@ -1,0 +1,5 @@
+## focused plane wave
+# number of beams
+1
+#lambda0 ni NA power real(e0x) imag(e0x) real(e0y) imag(e0y) fx fy fz theta phi sn
+0.6328 1.0 0.35 1.0 1.0 0.0 0.0 0.0 +0.0 0.0 -0.01 +1.1 0.0 64

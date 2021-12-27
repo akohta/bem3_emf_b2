@@ -38,16 +38,34 @@ int main(int argc,char *argv[])
 {
   MOBJ mo;
   IMD id;
+  double mf;
+  int sn,ty;
+
+  if(argc!=2 && argc!=5){
+    printf("Usage : %s datafile_name [sampling_number multplier_factor type](optional)\n",argv[0]);
+    printf("default sampling number 200, multiplier factor 1 (range is -1*lambda0 to 1*lambda0), type 1 (9 or 7 point Gauss-Legendre)\n");
+    exit(0);
+  }
+  else if(argc==5){
+    sn=atoi(argv[2]);
+    mf=atof(argv[3]);
+    ty=atoi(argv[4]);
+  }
+  else{
+    sn=200;
+    mf=1.0;
+    ty=1;
+  }
 
   mo_dat_read(argv[1],&mo); // read data file
   mo_print_data(&mo);       // print data
   
   directory_name(argv[1],id.dir_name); // remove file-extension from argv[1] and add "_images"
   id.scale=1;                          // number for enlarge the output image
-  id.m=200;                            // sampling number 
-  id.rang=1.0*mo.md[0].mw.lambda_0;    // range of sampling
+  id.m=sn;                             // sampling number 
+  id.rang=mf*mo.md[0].mw.lambda_0;     // range of sampling
   id.ts=40;                            // time step per cycle
-  id.type=1;                           // type=1 : 9 point or 7 point GL
+  id.type=ty;                          // type
   
   make_directory(id.dir_name);
 

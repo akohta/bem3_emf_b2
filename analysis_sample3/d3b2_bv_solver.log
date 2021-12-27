@@ -1,0 +1,106 @@
+../d3b2_bv_solver object_settings.txt ex3.dat
+
+-- multi_fbeam --
+ "fpw.txt" No.00 -- focused plane wave --
+wave length of incident beam in vacuum      :          0.6328
+refractive index of surrounding             :               1
+numerical aperture                          :            0.35
+incident beam power                         :               1
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :           -0.01
+rotation parameter theta               [rad]:             1.1
+rotation parameter phi                 [rad]:               0
+gauss-legendre integration sampling number  :              64
+
+********** object 0 **********
+data file name                : hemisphere_m1_md1.obj
+additional translation vector : (       0,       0,      -0)
+-- medium data --
+medium data file name                  : medium_data1.txt
+medium (domain) id  1 refractive index :   1.515 +        0I
+-- mesh data --
+mesh data file name    : hemisphere_m1.msh
+node number            :     1010
+defined element number :     2016
+********** object 1 **********
+data file name                : cone_m2_md2_xpi.obj
+additional translation vector : (       0,       0,    0.13)
+-- medium data --
+medium data file name                  : medium_data2.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m2.msh
+node number            :      818
+defined element number :     1656
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]:  3.141593
+
+
+initialize boundary value
+object  0
+  solve mEMP boundary value finished. Elapsed time :     8 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     5 (sec)
+
+the first iterative operation
+object  0
+  add scattered field       finished. Elapsed time :    15 (sec)
+object  1
+  add scattered field       finished. Elapsed time :    14 (sec)
+object  0
+  solve mEMP boundary value finished. Elapsed time :     8 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     4 (sec)
+Estimated time per one iteration :    41 (sec)
+
+iterative operation start. convergence criterion cc < 1e-06 and count > 10
+count =  2, cc = 0.422633
+count =  3, cc = 0.0286472
+count =  4, cc = 0.0029131
+count =  5, cc = 0.000175948
+count =  6, cc = 2.65969e-05
+count =  7, cc = 5.3547e-07
+count =  8, cc = 9.67781e-08
+count =  9, cc = 3.08072e-09
+count = 10, cc = 4.81828e-10
+count = 11, cc = 1.23962e-11
+finished. Elapsed time :   420 (sec)
+
+
+../d3b2_bv_solver object_settings0.txt ex30.dat
+
+-- multi_fbeam --
+ "fpw.txt" No.00 -- focused plane wave --
+wave length of incident beam in vacuum      :          0.6328
+refractive index of surrounding             :               1
+numerical aperture                          :            0.35
+incident beam power                         :               1
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :           -0.01
+rotation parameter theta               [rad]:             1.1
+rotation parameter phi                 [rad]:               0
+gauss-legendre integration sampling number  :              64
+
+********** object 0 **********
+data file name                : hemisphere_m1_md1.obj
+additional translation vector : (       0,       0,      -0)
+-- medium data --
+medium data file name                  : medium_data1.txt
+medium (domain) id  1 refractive index :   1.515 +        0I
+-- mesh data --
+mesh data file name    : hemisphere_m1.msh
+node number            :     1010
+defined element number :     2016
+
+
+single object
+  solve mEMP boundary value finished. Elapsed time :     7 (sec)
+  solve EH boundary value   finished. Elapsed time :     6 (sec)
+

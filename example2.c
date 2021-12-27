@@ -5,16 +5,31 @@ int main(int argc,char *argv[])
   MOBJ mo;
   FILE *fp1,*fp2;
   double complex e[3],h[3];
-  double rang,dr,r[3],*ie,*ih;
-  int max,i,j,type;
+  double rang,dr,r[3],*ie,*ih,mf;
+  int max,i,j,type,sn;
+
+  if(argc!=2 && argc!=5){
+    printf("Usage : %s datafile_name [sampling_number multplier_factor type](optional)\n",argv[0]);
+    printf("default sampling number 200, multiplier factor 1 (range is -1*lambda0 to 1*lambda0), type 1 (9 or 7 point Gauss-Legendre)\n");
+    exit(0);
+  }
+  else if(argc==5){
+    sn=atoi(argv[2]);
+    mf=atof(argv[3]);
+    type=atoi(argv[4]);
+  }
+  else{
+    sn=200;
+    mf=1.0;
+    type=1;
+  }
 
   mo_dat_read(argv[1],&mo); // read data file outputed by d3b2_bv_solver
   mo_print_data(&mo);       // print data
   
-  max=200;
-  rang=1.0*mo.md[0].mw.lambda_0;
+  max=sn;
+  rang=mf*mo.md[0].mw.lambda_0;
   dr=rang*2.0/(double)(max-1);
-  type=1;
   
   ie=(double *)m_alloc2(max,sizeof(double),"exampl2.c,ie");
   ih=(double *)m_alloc2(max,sizeof(double),"exampl2.c,ih");
