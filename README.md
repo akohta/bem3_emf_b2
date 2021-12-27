@@ -89,12 +89,13 @@ This is the analysis result of plane wave scattering by the five cone objects. T
 
 ## Verification  
 
-The verification results are in the folder verification. 
-These are the analysis results of two cone objects using two different method. 
-The one uses the iterative solution and the other uses the combined object (in the folder combined_object).  
+The verification results are in the folder verification1 and verification2. 
+The results in the folder verification1 are the analysis results of two cone objects using two different method.
+The one uses the iterative solution and the other uses the combined object (in the folder combined_object). 
+The results in the folder verification2 are the analysis results of three sphere objects. 
+The results using the code "emf_mie_ms" is in the folder emf_mie_ms_result.  
 
-![two cone objects](verification/v1_particles.png "two cone objects (verification/v1_particles.png)") 
-![combined object](verification/combined_object/2cone_image.png "combined object (verification/combined_object/2cone_image.png)") 
+![two cone objects](verification1/v1_particles.png "two cone objects (verification1/v1_particles.png)")  
 
 
 ## About mesh file
@@ -104,7 +105,7 @@ I recommend using quadrangular element for reduce required memory.
 The samples of mesh data are in the folder mesh_sample. 
 The file with extension .geo is the Gmsh geometry file. 
 The file with extension .msh is the mesh datafile created by using Gmsh geometry file. 
-These mesh files are created by the command 'gmsh -2 -tol 1.0e-15 xxxx.geo' in command line ( xxxx.geo is a geometry file). 
+These mesh files are created by the command 'gmsh -2 -tol 1.0e-15 -format msh2 xxxx.geo' in command line ( xxxx.geo is a geometry file). 
 The domain number (Physical Surface) 99 is assigned to the open region in Gmsh geometry file, because Gmsh can't use the number 0 (assigned to open region in the code). 
 Please refer to the manual of Gmsh for detail of geometry file.  
 
@@ -134,3 +135,4 @@ Please see com_src/osu_mksa.h and com_src/osu_mksa.c for detail of conversions.
 5. The utilities for manipulating images [ImageMagick](https://imagemagick.org/)  
 6. The electromagnetic field analysis program [multi_fbeam](https://github.com/akohta/multi_fbeam/) 
 7. The electromagnetic field analysis program [bem3_emf_b1](https://github.com/akohta/bem3_emf_b1/)
+8. The electromagnetic field analysis program [emf_mie_ms](https://github.com/akohta/emf_mie_ms/)  
