@@ -1,0 +1,82 @@
+../d3b2_bv_solver object_settings.txt v2.dat
+
+-- multi_fbeam --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:               0
+rotation parameter phi                 [rad]:               0
+
+********** object 0 **********
+data file name                : sphere_m0_md.obj
+additional translation vector : (       0,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : sphere_m0.msh
+node number            :      602
+defined element number :     1200
+********** object 1 **********
+data file name                : sphere_m0_md.obj
+additional translation vector : (     0.5,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : sphere_m0.msh
+node number            :      602
+defined element number :     1200
+********** object 2 **********
+data file name                : sphere_m0_md.obj
+additional translation vector : (    -0.5,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : sphere_m0.msh
+node number            :      602
+defined element number :     1200
+
+
+initialize boundary value
+object  0
+  solve mEMP boundary value finished. Elapsed time :     4 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     3 (sec)
+object  2
+  solve mEMP boundary value finished. Elapsed time :     4 (sec)
+
+the first iterative operation
+object  0
+  add scattered field       finished. Elapsed time :    12 (sec)
+object  1
+  add scattered field       finished. Elapsed time :    12 (sec)
+object  2
+  add scattered field       finished. Elapsed time :    12 (sec)
+object  0
+  solve mEMP boundary value finished. Elapsed time :     3 (sec)
+object  1
+  solve mEMP boundary value finished. Elapsed time :     3 (sec)
+object  2
+  solve mEMP boundary value finished. Elapsed time :     4 (sec)
+Estimated time per one iteration :    46 (sec)
+
+iterative operation start. convergence criterion cc < 1e-06 and count > 10
+count =  2, cc = 0.172605
+count =  3, cc = 0.0970776
+count =  4, cc = 0.0326842
+count =  5, cc = 0.00398272
+count =  6, cc = 0.00219781
+count =  7, cc = 0.000173908
+count =  8, cc = 0.000130729
+count =  9, cc = 9.51322e-06
+count = 10, cc = 7.78156e-06
+count = 11, cc = 8.30891e-07
+finished. Elapsed time :   457 (sec)

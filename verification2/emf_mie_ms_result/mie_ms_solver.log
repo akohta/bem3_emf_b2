@@ -1,0 +1,98 @@
+./mie_ms_solver v2.dat 
+
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:               0
+rotation parameter phi                 [rad]:               0
+
+---- sphere data ( msphr.txt ) ----
+number of spheres                             :                3
+  Sphere ID 0
+radius of sphere                              :              0.2
+refractive index of sphere                    :    0.06+      4i
+x-coordinate of sphere center                 :                0
+y-coordinate of sphere center                 :                0
+z-coordinate of sphere center                 :                0
+basic sampling number on sphere surface       :               32
+division number for sphere surface    (per PI):                4
+limit of order number l                       :               40
+  Sphere ID 1
+radius of sphere                              :              0.2
+refractive index of sphere                    :    0.06+      4i
+x-coordinate of sphere center                 :              0.5
+y-coordinate of sphere center                 :                0
+z-coordinate of sphere center                 :                0
+basic sampling number on sphere surface       :               32
+division number for sphere surface    (per PI):                4
+limit of order number l                       :               40
+  Sphere ID 2
+radius of sphere                              :              0.2
+refractive index of sphere                    :    0.06+      4i
+x-coordinate of sphere center                 :             -0.5
+y-coordinate of sphere center                 :                0
+z-coordinate of sphere center                 :                0
+basic sampling number on sphere surface       :               32
+division number for sphere surface    (per PI):                4
+limit of order number l                       :               40
+
+iterative operation start (convergence criterion : cv < 1e-12)
+  0, cv : 0.929098	0.345873	0.345873	
+  1, cv : 0.666468	0.103212	0.103212	
+  2, cv : 0.820556	0.00435133	0.00435133	
+  3, cv : 0.209296	0.0396249	0.0396249	
+  4, cv : 0.394231	0.00741017	0.00741017	
+  5, cv : 0.0598535	0.0036559	0.0036559	
+  6, cv : 0.159673	0.00161528	0.00161528	
+  7, cv : 0.00877426	0.00114004	0.00114004	
+  8, cv : 0.0110577	0.000606099	0.000606099	
+  9, cv : 0.00141052	0.000557874	0.000557874	
+ 10, cv : 0.00864234	0.000270182	0.000270182	
+ 11, cv : 0.000121669	7.06688e-06	7.06688e-06	
+ 12, cv : 0.00292314	1.81024e-05	1.81024e-05	
+ 13, cv : 0.000496483	6.33154e-05	6.33154e-05	
+ 14, cv : 0.000133946	3.2124e-05	3.2124e-05	
+ 15, cv : 0.000287648	1.60373e-05	1.60373e-05	
+ 16, cv : 0.000296914	3.46729e-06	3.46729e-06	
+ 17, cv : 2.36216e-05	3.61629e-06	3.61629e-06	
+ 18, cv : 4.78816e-05	3.09737e-06	3.09737e-06	
+ 19, cv : 3.57029e-05	2.6893e-06	2.6893e-06	
+ 20, cv : 1.84377e-05	9.86281e-07	9.86281e-07	
+ 21, cv : 1.40065e-05	1.93161e-07	1.93161e-07	
+ 22, cv : 7.76071e-06	1.80323e-07	1.80323e-07	
+ 23, cv : 6.88446e-07	2.63276e-07	2.63276e-07	
+ 24, cv : 5.30388e-07	1.55133e-07	1.55133e-07	
+ 25, cv : 1.92138e-06	7.89479e-08	7.89479e-08	
+ 26, cv : 8.84144e-07	1.00886e-08	1.00886e-08	
+ 27, cv : 4.07956e-07	1.30285e-08	1.30285e-08	
+ 28, cv : 8.38948e-08	1.65936e-08	1.65936e-08	
+ 29, cv : 1.25033e-07	1.17147e-08	1.17147e-08	
+ 30, cv : 8.67452e-08	4.7268e-09	4.7268e-09	
+ 31, cv : 7.66894e-08	9.5933e-10	9.5933e-10	
+ 32, cv : 2.51748e-08	9.74268e-10	9.74268e-10	
+ 33, cv : 3.42225e-09	1.14178e-09	1.14178e-09	
+ 34, cv : 5.77104e-09	7.70696e-10	7.70698e-10	
+ 35, cv : 7.89855e-09	3.46362e-10	3.46363e-10	
+ 36, cv : 4.20069e-09	4.99514e-11	4.99529e-11	
+ 37, cv : 2.11312e-09	6.02457e-11	6.02455e-11	
+ 38, cv : 1.48696e-10	8.01226e-11	8.01235e-11	
+ 39, cv : 4.35602e-10	5.25863e-11	5.25859e-11	
+ 40, cv : 4.81005e-10	2.30036e-11	2.30034e-11	
+ 41, cv : 3.30125e-10	3.89189e-12	3.89211e-12	
+ 42, cv : 1.20092e-10	4.47709e-12	4.47631e-12	
+ 43, cv : 1.95211e-11	5.32285e-12	5.32285e-12	
+ 44, cv : 3.21965e-11	3.6372e-12	3.63831e-12	
+ 45, cv : 3.35121e-11	1.56164e-12	1.56097e-12	
+ 46, cv : 2.13021e-11	2.53575e-13	2.51688e-13	
+ 47, cv : 9.12148e-12	2.93099e-13	2.93654e-13	
+ 48, cv : 7.61613e-13	3.70592e-13	3.70592e-13	
+ 49, cv : 1.97953e-12	2.43472e-13	2.4325e-13	
+ 50, cv : 2.365e-12	1.05915e-13	1.05471e-13	
+ 51, cv : 1.46216e-12	1.5099e-14	1.45439e-14	
+ 52, cv : 5.91305e-13	1.92069e-14	2.08722e-14

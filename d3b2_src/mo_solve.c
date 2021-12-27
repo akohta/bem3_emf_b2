@@ -56,7 +56,7 @@ void mo_solve_bv(MOBJ *mo)
     time(&end);
     printf("Estimated time per one iteration : %5g (sec)\n\n",difftime(end,start));
 
-    printf("iterative operation start. convergence criterion cc < %g\n",CCD);
+    printf("iterative operation start. convergence criterion cc < %g and count > %d\n",CCD,ITER_MIN);
     time(&start);
     for(iter=2;iter<itermax;iter++){
       printf("count =% 3d",iter);
@@ -76,6 +76,9 @@ void mo_solve_bv(MOBJ *mo)
       cc=ccd_f(mo);
       printf(", cc = %g\n",cc);
       if(cc<CCD && iter>ITER_MIN) break;
+    }
+    if(iter==itermax){
+      printf("The maximum number of iterations has been reached (The result has not converged).\n");
     }
     for(m=0;m<mo->N;m++) solve_coefficient_EH(0,&(mo->md[m]));
 

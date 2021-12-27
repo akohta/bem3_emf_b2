@@ -1,0 +1,99 @@
+../example1.out v2.dat 
+
+-- multi_fbeam --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:               0
+rotation parameter phi                 [rad]:               0
+
+********** object 0 **********
+data file name                : sphere_m0_md.obj
+additional translation vector : (       0,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : sphere_m0.msh
+node number            :      602
+defined element number :     1200
+********** object 1 **********
+data file name                : sphere_m0_md.obj
+additional translation vector : (     0.5,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : sphere_m0.msh
+node number            :      602
+defined element number :     1200
+********** object 2 **********
+data file name                : sphere_m0_md.obj
+additional translation vector : (    -0.5,       0,       0)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : sphere_m0.msh
+node number            :      602
+defined element number :     1200
+
+Total electromagnetic field at r=(  0.3, 0, 1.1 )
+type=0 setting ( 4 point Gauss-Legendre )
+Ex = -4.01061362885631e-02 +1.44448312198943e-02 I 
+Ey = -1.95856229406012e-14 +1.40442035442343e-13 I 
+Ez = -3.47198598798149e-03 +1.64927098144225e-03 I 
+Hx =  1.51189834028946e-13 +3.29633878684973e-14 I 
+Hy = -5.22581017811749e-02 +1.82693290989875e-02 I 
+Hz = -2.48182495687722e-15 -3.91325039065882e-14 I 
+type=1 setting ( 9 or 7 point Gauss-Legendre )
+Ex = -4.01058255686597e-02 +1.44450394604521e-02 I 
+Ey = -1.92906088410239e-14 +1.40360502759458e-13 I 
+Ez = -3.47196738340556e-03 +1.64925726765753e-03 I 
+Hx =  1.50128736423096e-13 +3.17952486946246e-14 I 
+Hy = -5.22571509937825e-02 +1.82699999423011e-02 I 
+Hz = -2.34908706053220e-15 -3.90056752953061e-14 I 
+
+Radiation force and torque
+type=0 setting ( 4 point Gauss-Legendre ) 
+object id = 0
+F = ( 4.15321260455875e-15, 1.26276857622797e-15, 3.37744446582908e-05)
+N = (-1.62706320610062e-16, 3.94171440685999e-16,-2.72485559870835e-15), center of rotation ( 0, 0, 0)
+object id = 1
+F = (-6.26381223888857e-05,-1.87592895048178e-15, 3.64101128644267e-04)
+N = (-2.67525191994904e-16,-2.85488890119837e-04,-3.75017569353032e-15), center of rotation ( 0, 0, 0)
+object id = 2
+F = ( 6.26381223970782e-05, 2.61481781322834e-15, 3.64101128646676e-04)
+N = ( 2.47491168726445e-16, 2.85488890121460e-04,-2.88493831417363e-15), center of rotation ( 0, 0, 0)
+type=1 setting ( 9 or 7 point Gauss-Legendre ) 
+objcet id = 0
+F = ( 3.14207210597162e-15, 1.21280718486712e-15, 3.34195011709222e-05)
+N = (-1.66466548844288e-16, 4.15028660865180e-16,-2.68427958386598e-15), center of rotation ( 0, 0, 0)
+objcet id = 1
+F = (-6.27315210993000e-05,-1.93161459050017e-15, 3.65482891969721e-04)
+N = ( 2.16706709170553e-15,-2.85460530425434e-04,-3.34382942477696e-15), center of rotation ( 0, 0, 0)
+objcet id = 2
+F = ( 6.27315211053419e-05, 2.48326682025617e-15, 3.65482891972062e-04)
+N = (-2.24257902016207e-15, 2.85460530427216e-04,-2.82342254637928e-15), center of rotation ( 0, 0, 0)
+
+Absorbed energy
+type=0 setting ( 4 point Gauss-Legendre ) 
+object id = 0
+P = 1.15163877283268e-05
+object id = 1
+P = 1.05438932061754e-05
+object id = 2
+P = 1.05438932061765e-05
+type=1 setting ( 9 or 7 point Gauss-Legendre ) 
+object id = 0
+P = 1.13300414437762e-05
+object id = 1
+P = 1.06497807122903e-05
+object id = 2
+P = 1.06497807123694e-05

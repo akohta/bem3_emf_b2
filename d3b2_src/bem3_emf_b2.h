@@ -109,6 +109,16 @@ int mo_force_FN(double *F,double *N,double *rc,int oid,int type,MOBJ *mo);
 // inputs
 // rc[0]=x, rc[1]=y, rc[2]=z ( center of rotation ), oid:object id, type, pointer of MOBJ.
 // type=0:4-point GL, type!=0:9-point or 7-point GL.
+// return 
+// 0 : abnormal termination, -1 : no boundary elements
 
+// mo_absorb.c 
+int mo_absorb_P(double *P,int oid,int type,MOBJ *mo);
+// output
+// P : absourbed energy 
+// return 
+// -2 : loss of significance (catastrophic cancellation) occurred during the surface integral of Poynting vector.
+//      The absorbed energy is even smaller than the returned value.
+// others are the same as mo_force_FN().
 
 #endif /* BEM3_EMF_B2_H_ */

@@ -1,4 +1,0 @@
-# number_of_objects reset_flag_of_incident_field(0:no reset, 1:reset)
-1 0
-# object_data_file_name shitf_x shift_y shit_z
-2cone_md.obj 0.0 0.0 0.0

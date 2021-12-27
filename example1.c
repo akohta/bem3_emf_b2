@@ -4,8 +4,8 @@ int main(int argc,char *argv[])
 {
   MOBJ mo;
   double complex E[3],H[3];
-  double F[3],N[3],r[3],rc[3];
-  int type,m;
+  double F[3],N[3],r[3],rc[3],P;
+  int type,m,ret;
 
   mo_dat_read(argv[1],&mo);      // read datafile outputed by d3b2_bv_solver
   mo_print_data(&mo);            // print data 
@@ -48,7 +48,6 @@ int main(int argc,char *argv[])
     printf("F = (% 15.14e,% 15.14e,% 15.14e)\n",F[0],F[1],F[2]);
     printf("N = (% 15.14e,% 15.14e,% 15.14e), center of rotation (% g,% g,% g)\n",N[0],N[1],N[2],rc[0],rc[1],rc[2]); 
   }
-  
   printf("type=1 setting ( 9 or 7 point Gauss-Legendre ) \n");
   type=1;                     // select 9 or 7 point Gauss-Legendre
   for(m=0;m<mo.N;m++){
@@ -57,6 +56,25 @@ int main(int argc,char *argv[])
     printf("F = (% 15.14e,% 15.14e,% 15.14e)\n",F[0],F[1],F[2]);
     printf("N = (% 15.14e,% 15.14e,% 15.14e), center of rotation (% g,% g,% g)\n",N[0],N[1],N[2],rc[0],rc[1],rc[2]); 
   }
+
+  
+  printf("\nAbsorbed energy\n");
+  printf("type=0 setting ( 4 point Gauss-Legendre ) \n"); 
+  type=0;                     // select 4 point Gauss-Legendre
+  for(m=0;m<mo.N;m++){
+    printf("object id = %d\n",m);
+    ret=mo_absorb_P(&P,m,type,&mo);
+    printf("P =% 15.14e\n",P);
+    if(ret==-2) printf("loss of significance (catastrophic cancellation) occurred.\nThe absorbed energy is even smaller than the returned value.\n");
+  } 
+  printf("type=1 setting ( 9 or 7 point Gauss-Legendre ) \n"); 
+  type=1;                     // select 9 or 7 point Gauss-Legendre
+  for(m=0;m<mo.N;m++){
+    printf("object id = %d\n",m);
+    ret=mo_absorb_P(&P,m,type,&mo);
+    printf("P =% 15.14e\n",P);
+    if(ret==-2) printf("loss of significance (catastrophic cancellation) occurred.\nThe absorbed energy is even smaller than the returned value.\n");
+  } 
   
   mo_finalize(&mo);
   return 0;

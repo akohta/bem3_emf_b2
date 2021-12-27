@@ -1,0 +1,79 @@
+../example1.out v1.dat 
+
+-- multi_fbeam --
+ "ipw.txt" No.00 -- plane wave --
+wave length of incident beam in vacuum      :           1.064
+refractive index of surrounding             :            1.33
+incident beam power per unit area           :           0.001
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :               0
+rotation parameter theta               [rad]:             0.3
+rotation parameter phi                 [rad]:               0
+
+********** object 0 **********
+data file name                : cone_m1_p5_md_x00.obj
+additional translation vector : (       0,       0,     0.2)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1_p5.msh
+node number            :      569
+defined element number :     1162
+********** object 1 **********
+data file name                : cone_m1_p5_md_x00.obj
+additional translation vector : (       0,       0,    -0.2)
+-- medium data --
+medium data file name                  : medium_data.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+-- mesh data --
+mesh data file name    : cone_m1_p5.msh
+node number            :      569
+defined element number :     1162
+
+Total electromagnetic field at r=(  0.3, 0, 1.1 )
+type=0 setting ( 4 point Gauss-Legendre )
+Ex = -3.11638815691643e-02 +9.05761938988644e-03 I 
+Ey =  4.41025002270578e-10 -1.70207204109991e-10 I 
+Ez =  9.12451444481091e-03 -3.51207185674190e-03 I 
+Hx =  3.05073896559580e-10 +5.52533364201607e-10 I 
+Hy = -4.33027641218903e-02 +1.11955328740547e-02 I 
+Hz =  6.73801968931257e-09 -1.03934847827224e-08 I 
+type=1 setting ( 9 or 7 point Gauss-Legendre )
+Ex = -3.11645888230469e-02 +9.05794939280797e-03 I 
+Ey =  4.41195218132229e-10 -1.70348946986778e-10 I 
+Ez =  9.12442866002893e-03 -3.51177606764163e-03 I 
+Hx =  3.05262535632692e-10 +5.52723745435705e-10 I 
+Hy = -4.33027871875130e-02 +1.11953248436551e-02 I 
+Hz =  6.73803581507189e-09 -1.03934162561260e-08 I 
+
+Radiation force and torque
+type=0 setting ( 4 point Gauss-Legendre ) 
+object id = 0
+F = ( 7.72757560143869e-05, 9.20629804351423e-11, 1.65813486789366e-04)
+N = ( 1.53507118956064e-11, 7.77307215173232e-06,-1.66586992830881e-09), center of rotation ( 0, 0, 0)
+object id = 1
+F = ( 6.53668592936201e-05,-2.53745955657351e-11, 3.15355004106681e-04)
+N = (-2.43009352564617e-12,-3.52704085793285e-05, 3.79192395326729e-10), center of rotation ( 0, 0, 0)
+type=1 setting ( 9 or 7 point Gauss-Legendre ) 
+objcet id = 0
+F = ( 6.35559414294871e-05, 8.72136421215932e-11, 1.06179003830143e-04)
+N = ( 1.15025451561294e-11, 6.60136990363954e-06,-1.00638737130457e-09), center of rotation ( 0, 0, 0)
+objcet id = 1
+F = ( 5.28186819986823e-05,-3.10978176218887e-11, 2.66820218217863e-04)
+N = (-1.89151877292929e-12,-3.37788286789326e-05, 2.31539958354431e-10), center of rotation ( 0, 0, 0)
+
+Absorbed energy
+type=0 setting ( 4 point Gauss-Legendre ) 
+object id = 0
+P = 7.58866908589914e-06
+object id = 1
+P = 1.16550305083644e-06
+type=1 setting ( 9 or 7 point Gauss-Legendre ) 
+object id = 0
+P = 7.45182639323232e-06
+object id = 1
+P = 9.81632380320095e-07

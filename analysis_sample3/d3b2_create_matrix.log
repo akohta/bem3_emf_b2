@@ -1,0 +1,69 @@
+../d3b2_create_matrix medium_data1.txt hemisphere_m1.msh hemisphere_m1_md1.obj
+
+-- multi_fbeam data --
+ "fpw.txt" No.00 -- focused plane wave --
+wave length of incident beam in vacuum      :          0.6328
+refractive index of surrounding             :               1
+numerical aperture                          :            0.35
+incident beam power                         :               1
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :           -0.01
+rotation parameter theta               [rad]:             1.1
+rotation parameter phi                 [rad]:               0
+gauss-legendre integration sampling number  :              64
+
+-- medium data --
+medium data file name                  : medium_data1.txt
+medium (domain) id  1 refractive index :   1.515 +        0I
+
+-- mesh data --
+mesh data file name    : hemisphere_m1.msh
+node number            :     1010
+defined element number :     2016
+
+
+create matrix data 
+  coefficient matrix          finished. Elapsed time :    65 (sec)
+  inverse matrix              finished. Elapsed time :  1933 (sec)
+Total elapsed time : 1999 (sec)
+
+
+../d3b2_create_matrix medium_data2.txt cone_m2.msh cone_m2_md2_xpi.obj 1 0 0 3.1415926535 0 0 0
+
+-- multi_fbeam data --
+ "fpw.txt" No.00 -- focused plane wave --
+wave length of incident beam in vacuum      :          0.6328
+refractive index of surrounding             :               1
+numerical aperture                          :            0.35
+incident beam power                         :               1
+x-component of polarization coefficient     :      1+      0i
+y-component of polarization coefficient     :      0+      0i
+x-component of translation vector           :               0
+y-component of translation vector           :               0
+z-component of translation vector           :           -0.01
+rotation parameter theta               [rad]:             1.1
+rotation parameter phi                 [rad]:               0
+gauss-legendre integration sampling number  :              64
+
+-- medium data --
+medium data file name                  : medium_data2.txt
+medium (domain) id  1 refractive index :    0.06 +        4I
+
+-- mesh data --
+mesh data file name    : cone_m2.msh
+node number            :      818
+defined element number :     1656
+
+-- rotation and translation settings --
+vector defining rotation axis :(       1,       0,       0)
+rotation angle           [rad]: 3.141593
+
+
+create matrix data 
+  coefficient matrix          finished. Elapsed time :    79 (sec)
+  inverse matrix              finished. Elapsed time :  1009 (sec)
+Total elapsed time : 1088 (sec)
+
