@@ -74,6 +74,7 @@ The number of threads is controlled by the environment variable OMP_NUM_THREADS.
 ![intensity](I_example2_logcb.png "intensity distributions (I_example2_logcb.png)") 
 ![xz_Ex.gif](xz_Ex.gif "instantaneous value of the E_x on y=0 plane (xz_Ex.gif)")![yz_Ex.gif](yz_Ex.gif "instantaneous value of the E_x on x=0 plane (yz_Ex.gif)")  
 ![xy_Ex.gif](xy_Ex.gif "instantaneous value of the E_x on z=0 plane (xy_Ex.gif)")  
+![far-field](I_example4.png "far-field intensity distributions (I_example4.png)")  
 
 
 ## Analysis sample 2 (in the folder analysis_sample2)  
@@ -84,7 +85,7 @@ This is the analysis result of plane wave scattering by the five cone objects. T
 ![intensity 2](analysis_sample2/I_example2_logcb.png "intensity distribusions (analysis_sample2/I_example2_logcb.png)") 
 ![xz_Ex.gif 2](analysis_sample2/xz_Ex.gif "instantaneous value of the E_x on y=0 plane (analysis_sample2/xz_Ex.gif)")![yz_Ex.gif 2](analysis_sample2/yz_Ex.gif "instantaneous value of the E_x on x=0 plane (analysis_sample2/yz_Ex.gif)")  
 ![xy_Ex.gif 2](analysis_sample2/xy_Ex.gif "instantaneous value of the E_x on z=0 plane (analysis_sample2/xy_Ex.gif)")  
-
+![far-field 2](analysis_sample2/I_example4.png "far-field intensity distributions (analysis_sample2/I_example4.png)")  
 
 ## Verification  
 
